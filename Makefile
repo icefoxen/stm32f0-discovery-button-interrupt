@@ -34,7 +34,7 @@ GDB  = $(GDBCLI)
 DDEFS = -DSTM32F0XX -DUSE_STDPERIPH_DRIVER
 #
 # Define project name and Ram/Flash mode here
-PROJECT        = template
+PROJECT        = button-interrupt
  
 # List C source files here
 LIBSDIRS    = ../STM32F0-Discovery_FW_V1.0.0/Libraries
@@ -59,10 +59,10 @@ SRC += $(DEVDIR)/Source/Templates/system_stm32f0xx.c
 #SRC += $(STMSPSRCDDIR)/stm32f0xx_dac.c
 #SRC += $(STMSPSRCDDIR)/stm32f0xx_dbgmcu.c
 #SRC += $(STMSPSRCDDIR)/stm32f0xx_dma.c
-#SRC += $(STMSPSRCDDIR)/stm32f0xx_exti.c
+SRC += $(STMSPSRCDDIR)/stm32f0xx_exti.c
 #SRC += $(STMSPSRCDDIR)/stm32f0xx_flash.c
 SRC += $(STMSPSRCDDIR)/stm32f0xx_gpio.c
-#SRC += $(STMSPSRCDDIR)/stm32f0xx_syscfg.c
+SRC += $(STMSPSRCDDIR)/stm32f0xx_syscfg.c
 #SRC += $(STMSPSRCDDIR)/stm32f0xx_i2c.c
 #SRC += $(STMSPSRCDDIR)/stm32f0xx_iwdg.c
 #SRC += $(STMSPSRCDDIR)/stm32f0xx_pwr.c
@@ -72,7 +72,9 @@ SRC += $(STMSPSRCDDIR)/stm32f0xx_rcc.c
 #SRC += $(STMSPSRCDDIR)/stm32f0xx_tim.c
 #SRC += $(STMSPSRCDDIR)/stm32f0xx_usart.c
 #SRC += $(STMSPSRCDDIR)/stm32f0xx_wwdg.c
-#SRC += $(STMSPSRCDDIR)/stm32f0xx_misc.c
+SRC += $(STMSPSRCDDIR)/stm32f0xx_misc.c
+#SRC += $(DISCOVERY)/stm32f0xx_discovery.c
+SRC += $(DISCOVERY)/stm32f0_discovery.c
 
 # List assembly startup source file here
 STARTUP = ./startup/startup_stm32f0xx.s
